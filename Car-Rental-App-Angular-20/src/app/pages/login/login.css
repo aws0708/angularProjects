@@ -1,0 +1,50 @@
+.bg-light {
+    background: linear-gradient(135deg, #03238e 0%, #bbb8b8 100%);
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    min-width: 100vw;
+}
+
+.card {
+    border-radius: 1.2rem;
+    width: 100%;
+    max-width: 380px;
+}
+
+.input-group-text {
+    background: #f0f0f0;
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+input.form-control:focus {
+    box-shadow: 0 0 4px #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary {
+    border-radius: 0.5rem;
+}
+
+.fa-user-circle {
+    color: #007bff;
+}
+
+.login-button {
+    background: linear-gradient(135deg, #03238e 0%, #bbb8b8 100%);
+}
+
+.forgot-password-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.98rem;
+    transition: color 0.15s;
+}
+
+.forgot-password-link:hover,
+.forgot-password-link:focus {
+    color: #0056b3;
+    text-decoration: underline;
+}
