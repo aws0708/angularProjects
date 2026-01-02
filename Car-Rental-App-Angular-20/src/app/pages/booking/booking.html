@@ -1,1 +1,140 @@
-<p>booking works!</p>
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <!-- Booking List as Cards (col-8) -->
+        <div class="col-8">
+            <div class="header-warning bg-warning p-2 mb-1">
+                <h5 class="mb-0"><i class="fa fa-list"></i> Booking List</h5>
+            </div>
+            <div class="row g-3">
+                <!-- Card 1 -->
+                <div class="col-md-4">
+                    <div class="card border-warning h-100">
+                        <div class="card-header bg-warning">
+                            <strong><i class="fa fa-id-badge"></i> #1001</strong>
+                        </div>
+                        <div class="card-body">
+                            <p class="mb-1"><i class="fa fa-user"></i> Alex Johnson</p>
+                            <p class="mb-1"><i class="fa fa-map-marker"></i> Boston</p>
+                            <p class="mb-1"><i class="fa fa-phone"></i> 123-456-7890</p>
+                            <p class="mb-1"><i class="fa fa-envelope"></i> alex.j@example.com</p>
+                            <p class="mb-1"><i class="fa fa-car"></i> 201</p>
+                            <p class="mb-1"><i class="fa fa-calendar"></i> 24-Dec-2025</p>
+                            <p class="mb-1"><i class="fa fa-money-bill">Total: </i> $172.50</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-md-4">
+                    <div class="card border-warning h-100">
+                        <div class="card-header bg-warning">
+                            <strong><i class="fa fa-id-badge"></i> #1002</strong>
+                        </div>
+                        <div class="card-body">
+                            <p class="mb-1"><i class="fa fa-user"></i> Maria Singh</p>
+                            <p class="mb-1"><i class="fa fa-map-marker"></i> New York</p>
+                            <p class="mb-1"><i class="fa fa-phone"></i> 212-555-8976</p>
+                            <p class="mb-1"><i class="fa fa-envelope"></i> m.singh@email.com</p>
+                            <p class="mb-1"><i class="fa fa-car"></i> 189</p>
+                            <p class="mb-1"><i class="fa fa-calendar"></i> 17-Dec-2025</p>
+                            <p class="mb-1"><i class="fa fa-money-bill-wave">Total: </i> $195.00</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-md-4">
+                    <div class="card border-warning h-100">
+                        <div class="card-header bg-warning">
+                            <strong><i class="fa fa-id-badge"></i> #1003</strong>
+                        </div>
+                        <div class="card-body">
+                            <p class="mb-1"><i class="fa fa-user"></i> Sam Ortega</p>
+                            <p class="mb-1"><i class="fa fa-map-marker"></i> Los Angeles</p>
+                            <p class="mb-1"><i class="fa fa-phone"></i> 310-991-2001</p>
+                            <p class="mb-1"><i class="fa fa-envelope"></i> sam.o@sample.com</p>
+                            <p class="mb-1"><i class="fa fa-car"></i> 155</p>
+                            <p class="mb-1"><i class="fa fa-calendar"></i> 10-Dec-2025</p>
+                            <p class="mb-1"><i class="fa fa-money-bill-wave">Total: </i> $210.00</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add additional cards if needed -->
+            </div>
+        </div>
+
+        <!-- Add/Update Booking Form remains unchanged in col-4 -->
+        <div class="col-4">
+            <div class="header-warning bg-warning p-2 mb-1">
+                <h5 class="mb-0"><i class="fa fa-edit"></i> Add/Update Booking</h5>
+            </div>
+            <div class="card border-warning rounded-0">
+                <div class="card-body">
+                    <form [formGroup]="bookingForm">
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                <label for="customerName" class="form-label">Name</label>
+                                <input type="text" formControlName="customerName" class="form-control" id="customerName"
+                                    placeholder="Enter Name" name="customerName">
+                            </div>
+                            <div class="col-6">
+                                <label for="customerCity" class="form-label">City</label>
+                                <input type="text" formControlName="customerCity" class="form-control" id="customerCity"
+                                    placeholder="Enter City" name="customerCity">
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                <label for="mobileNo" class="form-label">Mobile</label>
+                                <input type="text" formControlName="mobileNo" class="form-control" id="mobileNo"
+                                    placeholder="Mobile No" name="mobileNo">
+                            </div>
+                            <div class="col-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" formControlName="email" class="form-control" id="email"
+                                    placeholder="Email" name="email">
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                <label for="bookingId" class="form-label">Booking ID</label>
+                                <input type="number" formControlName="bookingId" class="form-control" id="bookingId"
+                                    placeholder="Booking ID" name="bookingId">
+                            </div>
+                            <div class="col-6">
+                                <label for="carId" class="form-label">Car ID</label>
+                                <select name="carId" id="carId" formControlName="carId" class="form-select">
+                                    @for (item of carList; track $index) {
+                                    <option [value]="item.carId">{{item.regNo}}</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                <label for="bookingDate" class="form-label">Booking Date</label>
+                                <input type="date" formControlName="bookingDate" class="form-control" id="bookingDate"
+                                    name="bookingDate">
+                            </div>
+                            <div class="col-6">
+                                <label for="discount" class="form-label">Discount</label>
+                                <input type="number" formControlName="discount" class="form-control" id="discount"
+                                    placeholder="0" name="discount">
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-12">
+                                <label for="totalBillAmount" class="form-label">Total Bill ($)</label>
+                                <input type="number" formControlName="totalBillAmount" class="form-control"
+                                    id="totalBillAmount" placeholder="0.00" name="totalBillAmount">
+                            </div>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" (click)="saveBooking()" class="btn btn-success">
+                                <i class="fa fa-save"></i> Save Booking
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
