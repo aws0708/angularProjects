@@ -2,10 +2,11 @@ import { Component, inject, OnInit } from '@angular/core';
 import { BookingService } from '../../service/booking';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { APIResponse } from '../../model/car';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-booking',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, DatePipe],
   templateUrl: './booking.html',
   styleUrl: './booking.css',
 })

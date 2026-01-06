@@ -18,7 +18,7 @@ export class Login {
 
   onLogin() {
     if (this.loginObj.userName.toLowerCase() == "admin" && this.loginObj.password == "112233") {
-      this.router.navigateByUrl("/dashboard");
+      this.router.navigateByUrl("/vehicles");
     }
     else {
       alert("Wrong Credentials");
