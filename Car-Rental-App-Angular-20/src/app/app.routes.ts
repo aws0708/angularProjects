@@ -4,6 +4,7 @@ import { Layout } from './pages/layout/layout';
 import { Dashboard } from './pages/dashboard/dashboard';
 import { Vehicles } from './pages/vehicles/vehicles';
 import { Booking } from './pages/booking/booking';
+import { authguardGuard } from './auth/guards/authguard-guard';
 
 export const routes: Routes = [
     {
@@ -19,6 +20,7 @@ export const routes: Routes = [
         path: '',
         // component: Layout,
         loadComponent: () => import('./pages/layout/layout').then(m => m.Layout),
+        canActivate:[authguardGuard],
         children: [
             {
                 path: 'dashboard',
