@@ -23,7 +23,7 @@
 .navbar-nav .nav-link:focus {
   color: #ffd100 !important;
 }
-.logout{
+.item-cursor{
   cursor: pointer;
 }
 

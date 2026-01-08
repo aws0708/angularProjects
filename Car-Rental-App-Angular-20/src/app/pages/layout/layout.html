@@ -10,19 +10,19 @@
 
     <div class="collapse navbar-collapse" id="navbarVehicle">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="javascript:void(0)"><i class="fa fa-home"></i> Home</a>
+        <li class="nav-item item-cursor">
+          <a class="nav-link active" aria-current="page" routerLink="/home"><i class="fa fa-home"></i> Home</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item item-cursor">
           <a class="nav-link" routerLink="/vehicles"><i class="fa fa-car"></i> Vehicles</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item item-cursor">
           <a class="nav-link" routerLink="/bookings"><i class="fa fa-calendar"></i> Bookings</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item item-cursor">
           <a class="nav-link" href="javascript:void(0)"><i class="fa fa-user"></i> Account</a>
         </li>
-        <li class="nav-item logout">
+        <li class="nav-item item-cursor">
           <a class="nav-link" (click)="onLogOut()"><i class="fa fa-sign-out"></i> Logout</a>
         </li>
       </ul>

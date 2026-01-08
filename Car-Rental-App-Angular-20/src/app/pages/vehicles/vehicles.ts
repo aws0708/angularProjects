@@ -3,6 +3,8 @@ import { APIResponse, CarModel } from '../../model/car';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { Authservice } from '../../auth/service/authservice';
+import { Vehicleservice } from '../../service/vehicleservice';
 
 @Component({
   selector: 'app-vehicles',
@@ -15,28 +17,30 @@ export class Vehicles {
   newCarObj: CarModel;
   // http!:HttpClient;
   http = inject(HttpClient);
-  createNewCarApiUrl = 'https://freeapi.miniprojectideas.com/api/CarRentalApp/CreateNewCar';
-  getAllCarsApiUrl = 'https://freeapi.miniprojectideas.com/api/CarRentalApp/GetCars';
-  updateCarApiUrl = 'https://freeapi.miniprojectideas.com/api/CarRentalApp/UpdateCar';
-  deleteCarApiUrl = 'https://freeapi.miniprojectideas.com/api/CarRentalApp/DeleteCarbyCarId?carid='
   carList!: CarModel[];
+  isLoggedIn:boolean = false;
 
+  authService = inject(Authservice);
+  vehicleService = inject(Vehicleservice);
+  
 
   constructor() {
     this.newCarObj = new CarModel();
   }
   ngOnInit(): void {
+    this.isLoggedIn = this.authService.isLoggedIn();
     this.getAllCars();
   }
   getAllCars() {
-    this.http.get<APIResponse>(this.getAllCarsApiUrl).subscribe({
+    this.vehicleService.getCars().subscribe({
       next: (res: APIResponse) => {
         this.carList = res.data;
       }
     })
+
   }
   onSaveCar() {
-    this.http.post<APIResponse>(this.createNewCarApiUrl, this.newCarObj).subscribe({
+    this.vehicleService.createNewCar(this.newCarObj).subscribe({
       next: (res: APIResponse) => {
         if (res.result) {
           alert("Vehicle creation success!!")
@@ -50,12 +54,13 @@ export class Vehicles {
 
       }
     })
+
   }
   onEdit(carData: CarModel) {
     this.newCarObj = carData;
   }
   onUpdateCar() {
-    this.http.put<APIResponse>(this.updateCarApiUrl, this.newCarObj).subscribe({
+    this.vehicleService.updateCar(this.newCarObj).subscribe({
       next: (res: APIResponse) => {
         alert("Car info updated !!")
         this.newCarObj = res.data;
@@ -67,7 +72,7 @@ export class Vehicles {
     })
   }
   onDeleteCarById(id: number) {
-    this.http.delete<APIResponse>(this.deleteCarApiUrl + id).subscribe({
+    this.vehicleService.deleteCar(id).subscribe({
       next: (res: APIResponse) => {
         alert("Car Deleted !!");
         this.getAllCars();

@@ -5,12 +5,17 @@ import { Dashboard } from './pages/dashboard/dashboard';
 import { Vehicles } from './pages/vehicles/vehicles';
 import { Booking } from './pages/booking/booking';
 import { authguardGuard } from './auth/guards/authguard-guard';
+import { Home } from './pages/home/home';
 
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'login',
+        redirectTo: 'home',
         pathMatch: 'full'
+    },
+    {
+        path:'home',
+        component:Home
     },
     {
         path: 'login',
@@ -20,8 +25,11 @@ export const routes: Routes = [
         path: '',
         // component: Layout,
         loadComponent: () => import('./pages/layout/layout').then(m => m.Layout),
-        canActivate:[authguardGuard],
         children: [
+            // {
+            //     path: 'home',
+            //     loadComponent: () => import('./pages/home/home').then(m => m.Home),
+            // },
             {
                 path: 'dashboard',
                 // component: Dashboard
@@ -34,7 +42,8 @@ export const routes: Routes = [
             },
             {
                 path: 'bookings',
-                loadComponent: () => import('./pages/booking/booking').then(m => m.Booking)
+                loadComponent: () => import('./pages/booking/booking').then(m => m.Booking),
+                canActivate: [authguardGuard],
             }
         ]
     }

@@ -1,3 +1,46 @@
+@if(!isLoggedIn){
+<div class="container-fluid my-4">
+<div class="col-12 mb-4">
+    <div class="card shadow-sm h-100">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0"><i class="fa fa-car"></i> Vehicles List</h5>
+        </div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table mb-0 align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>carId</th>
+                            <th>Brand</th>
+                            <th>Model</th>
+                            <th>Year</th>
+                            <th>Color</th>
+                            <th>Rate</th>
+                            <th>RegNo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Sample Static Row - replace with dynamic content later -->
+                        @for(item of carList; track $index){
+                        <tr>
+                            <td>{{$index + 1}}</td>
+                            <td>{{item.brand}}</td>
+                            <td>{{item.model}}</td>
+                            <td>{{item.year}}</td>
+                            <td>{{item.color}}</td>
+                            <td>{{item.dailyRate}}</td>
+                            <td>{{item.regNo}}</td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+}
+@else{
 <div class="container-fluid my-4">
     <div class="row">
         <!-- Vehicle List Card -->
@@ -41,7 +84,8 @@
                                         <button class="btn btn-sm btn-outline-success me-1" (click)="onEdit(item)">
                                             <i class="fa fa-edit"></i>
                                         </button>
-                                        <button class="btn btn-sm btn-outline-danger" (click)="onDeleteCarById(item.carId)">
+                                        <button class="btn btn-sm btn-outline-danger"
+                                            (click)="onDeleteCarById(item.carId)">
                                             <i class="fa fa-trash"></i>
                                         </button>
                                     </td>
@@ -111,3 +155,4 @@
         </div>
     </div>
 </div>
+}
