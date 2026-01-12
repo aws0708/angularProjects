@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Vehicleservice } from '../../service/vehicleservice';
+import { APIResponse, CarModel } from '../../model/car';
 
 @Component({
   selector: 'app-vehiclelist',
@@ -7,5 +9,19 @@ import { Component } from '@angular/core';
   styleUrl: './vehiclelist.css',
 })
 export class Vehiclelist {
+  vehicleService =inject(Vehicleservice);
+  carList!: CarModel[];
+
+  ngOnInit(){
+    this.getAllCars();
+  }
+
+  getAllCars(){
+    this.vehicleService.getCars().subscribe({
+      next: (res: APIResponse)=>{
+        this.carList = res.data;
+      }
+    })
+  }
 
 }

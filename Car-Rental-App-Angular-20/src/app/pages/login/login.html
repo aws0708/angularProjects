@@ -20,9 +20,11 @@
         </div>
       </div>
       <button type="button" (click)="onLogin()" class="btn btn-primary w-100 login-button">Login</button>
-      <div class="text-center mt-3">
+      <div class="text-center mt-3 d-flex justify-content-evenly">
         <a href="#" class="forgot-password-link">Forgot Password?</a>
+        <a routerLink="/" class="back-home">Back to Home</a>
       </div>
     </form>
   </div>
 </div>
+<router-outlet></router-outlet>

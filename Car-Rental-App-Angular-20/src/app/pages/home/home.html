@@ -8,12 +8,12 @@
       <p class="lead mb-4">
         Find, compare, and rent vehicles at the best prices. Flexible rentals, instant booking, trusted service.
       </p>
-      <a routerLink="/vehicles" class="btn btn-primary btn-lg">
+      <a class="btn btn-lg vehicles" routerLink="/vehiclelist">
         <i class="fa fa-search"></i> Browse Vehicles
       </a>
     </div>
     <div class="col-md-5 text-center">
-      <img src="assets/vehicle-banner.png" alt="Choose Your Vehicle" class="img-fluid rounded">
+      <img src="https://www.kia.com/content/dam/kwcms/gt/en/images/discover-kia/voice-search/parts-80-1.jpg" alt="Choose Your Vehicle" class="img-fluid rounded w-100">
     </div>
   </div>
   <!-- Feature Cards -->
@@ -53,16 +53,16 @@
       <a routerLink="/signup" class="btn btn-success btn-lg me-2">
         <i class="fa fa-user-plus"></i> Sign Up
       </a>
-      <a routerLink="/login" class="btn btn-outline-primary btn-lg">
+      <a routerLink="/login" class="btn btn-outline-primary btn-lg login">
+        <i class="fa fa-sign-in-alt"></i> Login
+      </a>
+    </div>
+    <div class="col text-center">
+      <h3 class="mb-3">Are You an Admin?</h3>
+      <a class="btn btn-outline-primary btn-lg login" routerLink="/login">
         <i class="fa fa-sign-in-alt"></i> Login
       </a>
     </div>
   </div>
-  <!-- Footer -->
-  <footer class="pt-4 mt-4 border-top text-center text-muted">
-    <p>
-      &copy; 2026 Vehicle Rental App | 
-      <a href="mailto:support@vehiclerental.com" class="text-decoration-none"><i class="fa fa-envelope"></i> Contact Us</a>
-    </p>
-  </footer>
 </div>
+<router-outlet></router-outlet>

@@ -36,7 +36,7 @@ input.form-control:focus {
     background: linear-gradient(135deg, #03238e 0%, #bbb8b8 100%);
 }
 
-.forgot-password-link {
+.forgot-password-link,.back-home {
     color: #007bff;
     text-decoration: none;
     font-size: 0.98rem;

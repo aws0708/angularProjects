@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { FormGroup, FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet, RouterLinkWithHref } from '@angular/router';
 import { Authservice } from '../../auth/service/authservice';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterOutlet, RouterLinkWithHref],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
@@ -21,7 +21,7 @@ export class Login {
   onLogin() {
     if (this.loginObj.userName.toLowerCase() == "admin" && this.loginObj.password == "112233") {
       this.authService.logIn();
-      this.router.navigateByUrl("/vehicles");
+      this.router.navigateByUrl("/adminhome");
     }
     else {
       alert("Wrong Credentials");
