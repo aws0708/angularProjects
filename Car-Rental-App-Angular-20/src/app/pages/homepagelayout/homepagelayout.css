@@ -1,0 +1,49 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 0 2rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+  height: 60px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-logo .fa-car-side {
+  font-size: 1.5rem;
+}
+
+.nav-logo span {
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  color: #075d5f;
+}
+
+.nav-items {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+}
+
+.nav-items li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-items li a {
+  text-decoration: none;
+  color: #075d5f;
+  font-weight: 500;
+  transition: color 0.2s;
+  font-size: 1rem;
+}
+
+.nav-items li a:hover {
+  color: #046E38;
+}

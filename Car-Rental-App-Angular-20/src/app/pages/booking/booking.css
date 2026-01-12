@@ -1,0 +1,61 @@
+.header-warning {
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.card-header.bg-warning,
+.header-warning.bg-warning {
+  font-weight: bold;
+  background: #ffc107 !important;
+  color: #333 !important;
+  border-bottom: 1px solid #f3d15a;
+}
+
+/* Card grid and visual tweaks */
+.card {
+  box-shadow: 0 0.125rem 0.625rem rgba(0,0,0,0.10);
+  border-radius: .5rem;
+  border-width: 2px !important;
+}
+
+.card .card-header {
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+}
+
+.card .card-body p {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.card .fa,
+.card .fas {
+  color: #ffc107;
+  margin-right: 0.35em;
+  font-size: 1.08em;
+}
+
+/* Responsive card grid */
+.row.g-3 > [class^="col-"] {
+  display: flex;
+}
+
+.card.h-100 {
+  width: 100%;
+}
+
+@media (max-width: 991.98px) {
+  .col-8, .col-4,
+  .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .card {
+    margin-top: 1rem;
+  }
+}

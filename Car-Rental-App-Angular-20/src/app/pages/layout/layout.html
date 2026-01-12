@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark vehicle-navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="javascript:void(0)">
+      <i class="fa fa-car"></i>
+      VehicleRental
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarVehicle"
+      aria-controls="navbarVehicle" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarVehicle">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item item-cursor">
+          <a class="nav-link active" aria-current="page" routerLink="/adminhome"><i class="fa fa-home"></i> Home</a>
+        </li>
+        <li class="nav-item item-cursor">
+          <a class="nav-link" routerLink="/vehicles"><i class="fa fa-car"></i> Vehicles</a>
+        </li>
+        <li class="nav-item item-cursor">
+          <a class="nav-link" routerLink="/bookings"><i class="fa fa-calendar"></i> Bookings</a>
+        </li>
+        <li class="nav-item item-cursor">
+          <a class="nav-link" href="javascript:void(0)"><i class="fa fa-user"></i> Account</a>
+        </li>
+        <li class="nav-item item-cursor">
+          <a class="nav-link" (click)="onLogOut()"><i class="fa fa-sign-out"></i> Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+<footer class="bg-primary text-white text-center py-3 w-100 mt-5" style="left:0;bottom:0;">
+  <div>
+    <i class="fa fa-copyright"></i>
+    2026 Car Rental Dashboard. All rights reserved.
+  </div>
+</footer>
